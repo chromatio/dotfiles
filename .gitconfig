@@ -1,0 +1,11 @@
+
+
+[user]
+        name = Claudio Ross
+        email = BLA@example.org
+
+[color]
+        ui = auto
+        diff = auto
+        status = auto
+        branch = auto
