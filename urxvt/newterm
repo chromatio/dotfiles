@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+# To spawn a new terminal in the current directory using Ctrl-Shift-N:
+#
+# URxvt.perl-ext-common: newterm
+# URxvt.keysym.C-S-N: perl:newterm
+
+sub on_user_command {
+    my ($term, $string) = @_;
+
+    # Check that keysym was "perl:newterm"
+    if ($string == "newterm") {
+        my $dir = readlink("/proc/" . $term->{child_pid} . "/cwd");
+        exec("urxvt", "-cd", "$dir") unless fork;
+    }
+    ()
+}
+
+sub on_child_start {
+    my ($term, $pid) = @_;
+    $term->{child_pid} = $pid;
+    ()
+}
