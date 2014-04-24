@@ -105,6 +105,8 @@ set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
+	set anti enc=utf-8
+	set guifont=Source\ Code\ Pro\ 11 
     set guioptions-=T
     set guioptions-=e
     set t_Co=256
