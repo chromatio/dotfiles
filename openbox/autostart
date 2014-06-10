@@ -16,7 +16,10 @@ fi
 test -z $BG || $BG -solid "#323232"
 
 # Start panel with openbox
-tint2 &
+ tint2 &
+# xfce4-panel &
 
+# start pidgin
+pidgin &
 # Start volumeicon with openbox
 volumeicon &

@@ -35,30 +35,18 @@
 	
 	<separator />
 	
-	<item label="Exit">
-		<action name="Exit" />
-	</item>
-
-	<item label="Reboot">
+	<item label="Shutdown">
 		<action name="Execute">
-			<prompt>
-				Are you sure you want to reboot?
-			</prompt>
-
 			<execute>
-				sudo shutdown -r now
+				sudo /sbin/shutdown -h now	
 			</execute>
 		</action>
 	</item>
 
-	<item label="Shutdown">
+	<item label="Reboot">
 		<action name="Execute">
-			<prompt>
-				Are you sure you want to shutdown?
-			</prompt>
-
 			<execute>
-				sudo shutdown -h now
+				sudo /sbin/shutdown -r now
 			</execute>
 		</action>
 	</item>
